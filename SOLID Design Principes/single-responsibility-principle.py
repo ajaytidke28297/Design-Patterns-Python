@@ -20,9 +20,9 @@ class PersistenceManager:
 
     @staticmethod
     def save_to_file(journal, filename):
-        file = open(filename, 'w')
-        file.write(str(journal))
-        file.close()
+        file_obj = open(filename, 'w')
+        file_obj.write(str(journal))
+        file_obj.close()
 
 
 j = Journal()

@@ -7,10 +7,12 @@ class Color(Enum):
     GREEN = 2
     BLUE = 3
 
+
 class Size(Enum):
     SMALL = 1
     MEDIUM = 2
     LARGE = 3
+
 
 class Product:
 
@@ -19,8 +21,9 @@ class Product:
         self.color = color
         self.size = size
 
+
 class ProductFilter:
-    
+
     def filter_by_color(self, products, color):
         for p in products:
             if p.color == color:
@@ -36,6 +39,7 @@ class ProductFilter:
             if p.color == color and p.size == size:
                 yield p
 
+
 # Specification
 
 class Specification:
@@ -47,7 +51,7 @@ class Specification:
         return AndSpecification(self, other)
 
 
-class Filter: 
+class Filter:
     def filter(self, items, spec):
         pass
 
@@ -69,11 +73,11 @@ class SizeSpeicification(Specification):
         self.size = size
 
     def is_satisfied(self, item):
-        return item.size == self.size 
+        return item.size == self.size
 
 
 class AndSpecification(Specification):
-    
+
     def __init__(self, *args) -> None:
         self.args = args
 

@@ -5,10 +5,10 @@ from abc import abstractmethod
 
 
 class Machine:
-    
+
     def print(self, document):
         raise NotImplementedError
-    
+
     def fax(self, document):
         raise NotImplementedError
 
@@ -16,9 +16,9 @@ class Machine:
         raise NotImplementedError
 
 
-class MultiFuncionPrinter(Machine):
+class MultiFunctionPrinter(Machine):
 
-    def print(self, documen):
+    def print(self, document):
         pass
 
     def fax(self, document):
@@ -31,23 +31,23 @@ class MultiFuncionPrinter(Machine):
 class OldFashionedPrinter(Machine):
 
     def print(self, document):
-        #ok
+        # ok
         pass
 
-    def fax(self, documen):
+    def fax(self, document):
         raise NotImplementedError('Printer cannot fax')
 
     def scan(self, document):
         """
             Not Supported!
         """
-        raise NotImplementedError('Printer canno scan!')
+        raise NotImplementedError('Printer cannon scan!')
 
 
 class Printer:
-    
+
     @abstractmethod
-    def print(self, documen):
+    def print(self, document):
         pass
 
 
@@ -64,7 +64,7 @@ class MyPrinter(Printer):
 
 
 class Photocopier(Printer, Scanner):
-    
+
     def print(self, document):
         pass
 
@@ -94,4 +94,3 @@ class MultiFunctionMachine(MultiFunctionDevice):
 
     def scan(self, document):
         return super().scan(document)
-
